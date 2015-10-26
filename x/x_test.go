@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sort"
 
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/x"
 )
 
 func ExampleUniqueString() {

@@ -8,8 +8,8 @@ package mongodb
 // For linux it's 127.0.0.1.
 
 import (
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 	"labix.org/v2/mgo"
 	"labix.org/v2/mgo/bson"
 )

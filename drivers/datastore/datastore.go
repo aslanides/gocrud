@@ -1,8 +1,8 @@
 package datastore
 
 import (
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"

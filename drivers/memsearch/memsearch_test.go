@@ -3,7 +3,7 @@ package memsearch
 import (
 	"testing"
 
-	"github.com/manishrjain/gocrud/testx"
+	"github.com/aslanides/gocrud/testx"
 )
 
 func initialize() *MemSearch {

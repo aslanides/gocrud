@@ -7,8 +7,8 @@ import (
 	"time"
 
 	"github.com/Sirupsen/logrus"
-	"github.com/manishrjain/gocrud/req"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/req"
+	"github.com/aslanides/gocrud/x"
 )
 
 // Update stores the create and update instructions, acting as the modifier

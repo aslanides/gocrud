@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/manishrjain/gocrud/testx"
+	"github.com/aslanides/gocrud/testx"
 )
 
 var galaxies = [...]string{

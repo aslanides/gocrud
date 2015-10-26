@@ -7,7 +7,7 @@
 // application level.
 package search
 
-import "github.com/manishrjain/gocrud/x"
+import "github.com/aslanides/gocrud/x"
 
 var log = x.Log("search")
 

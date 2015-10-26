@@ -3,12 +3,12 @@ package indexer_test
 import (
 	"time"
 
-	_ "github.com/manishrjain/gocrud/drivers/leveldb"
-	_ "github.com/manishrjain/gocrud/drivers/memsearch"
-	"github.com/manishrjain/gocrud/indexer"
-	"github.com/manishrjain/gocrud/search"
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
+	_ "github.com/aslanides/gocrud/drivers/leveldb"
+	_ "github.com/aslanides/gocrud/drivers/memsearch"
+	"github.com/aslanides/gocrud/indexer"
+	"github.com/aslanides/gocrud/search"
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 )
 
 type SimpleIndexer struct {

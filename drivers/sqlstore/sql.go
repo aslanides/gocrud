@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 )
 
 var log = x.Log("sqlstore")

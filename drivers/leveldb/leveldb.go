@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/filter"
 	"github.com/syndtr/goleveldb/leveldb/opt"

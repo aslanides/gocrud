@@ -4,7 +4,7 @@
 package store
 
 import (
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/x"
 )
 
 var log = x.Log("store")

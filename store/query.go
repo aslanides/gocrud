@@ -7,7 +7,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/x"
 )
 
 var (

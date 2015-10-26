@@ -12,9 +12,9 @@ package rethinkdb
 // r.db('test').table('instructions').indexCreate('SubjectId')
 
 import (
+	"github.com/aslanides/gocrud/store"
+	"github.com/aslanides/gocrud/x"
 	r "github.com/dancannon/gorethink"
-	"github.com/manishrjain/gocrud/store"
-	"github.com/manishrjain/gocrud/x"
 )
 
 var log = x.Log("rethinkdb")

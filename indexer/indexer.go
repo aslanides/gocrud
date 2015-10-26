@@ -4,9 +4,9 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/manishrjain/gocrud/req"
-	"github.com/manishrjain/gocrud/search"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/req"
+	"github.com/aslanides/gocrud/search"
+	"github.com/aslanides/gocrud/x"
 )
 
 var log = x.Log("indexer")

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/manishrjain/gocrud/search"
-	"github.com/manishrjain/gocrud/x"
+	"github.com/aslanides/gocrud/search"
+	"github.com/aslanides/gocrud/x"
 	"gopkg.in/olivere/elastic.v2"
 )
 
