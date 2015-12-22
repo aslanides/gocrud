@@ -186,21 +186,13 @@ func (q *Query) doRun(level, max int, ch chan runResult) {
 	childChan := make(chan runResult)
 	for _, it := range its {
 		if it.Predicate == "_delete_" && !q.getDeleted {
-			var del bool
-			err := json.Unmarshal(it.Object, &del)
-			if err != nil {
-				log.Errorf("While unmarshalling %v: %v", string(it.Object), err)
-				return
-			}
-			if del {
-				// If marked as deleted, don't return this node.
-				log.WithField("id", result.Id).
-					WithField("kind", result.Kind).
-					WithField("_delete_", true).
-					Debug("Discarding due to delete bit")
-				ch <- runResult{Result: new(Result), Err: nil}
-				return
-			}
+			// If marked as deleted, don't return this node.
+			log.WithField("id", result.Id).
+				WithField("kind", result.Kind).
+				WithField("_delete_", true).
+				Debug("Discarding due to delete bit")
+			ch <- runResult{Result: new(Result), Err: nil}
+			return
 		}
 
 		if it.Predicate == "_parent_" {
