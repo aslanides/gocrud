@@ -86,10 +86,6 @@ func (n *Update) MarkDeleted() *Update {
 	return n.Set("_delete_", true)
 }
 
-func (n *Update) MarkRestored() *Update {
-	return n.Set("_delete_", false)
-}
-
 func (n *Update) recPrint(l int) {
 	log.Printf("Update[%d]: %+v", l, n)
 	for _, child := range n.children {
