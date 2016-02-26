@@ -49,6 +49,7 @@ func (cs *Cassandra) Init(args ...string) {
 	cluster := gocql.NewCluster(ipaddr)
 	cluster.Keyspace = keyspace
 	cluster.Consistency = gocql.Quorum
+	cluster.ProtoVersion = 3
 	if len(args) == 5 {
 		log.WithField("username", args[3]).
 			Debug("Passing username and password to Cassandra")
