@@ -36,7 +36,25 @@ func (cs *Cassandra) SetSession(session *gocql.Session) {
 	cs.session = session
 }
 
+func (cs *Cassandra) setTableName(tablename string) {
+	kIsNew = fmt.Sprintf("select subject_id from %s where subject_id = ?", tablename)
+	kInsert = fmt.Sprintf(`insert into %s (ts, subject_id, subject_type, predicate,
+	object, object_id, nano_ts, source) values (now(), ?, ?, ?, ?, ?, ?, ?)`, tablename)
+	kSelect = fmt.Sprintf(`select subject_id, subject_type, predicate, object,
+	object_id, nano_ts, source from %s where subject_id = ?`, tablename)
+	kScan = fmt.Sprintf(`select subject_type, subject_id
+	from %s where token(subject_id) > token(?) limit ?`, tablename)
+}
+
 func (cs *Cassandra) Init(args ...string) {
+
+	// configured cluster's session will need to be set via SetSession
+	if len(args) == 1 {
+		cs.setTableName(args[0])
+		return
+	}
+
+	// use default settings
 	if len(args) != 3 && len(args) != 5 {
 		log.WithField("args", args).Fatal("Invalid arguments")
 		return
@@ -64,15 +82,9 @@ func (cs *Cassandra) Init(args ...string) {
 		x.LogErr(log, err).Fatal("While creating session")
 		return
 	}
-	cs.session = session
 
-	kIsNew = fmt.Sprintf("select subject_id from %s where subject_id = ?", tablename)
-	kInsert = fmt.Sprintf(`insert into %s (ts, subject_id, subject_type, predicate,
-object, object_id, nano_ts, source) values (now(), ?, ?, ?, ?, ?, ?, ?)`, tablename)
-	kSelect = fmt.Sprintf(`select subject_id, subject_type, predicate, object,
-object_id, nano_ts, source from %s where subject_id = ?`, tablename)
-	kScan = fmt.Sprintf(`select subject_type, subject_id
-from %s where token(subject_id) > token(?) limit ?`, tablename)
+	cs.setTableName(tablename)
+	cs.session = session
 }
 
 func (cs *Cassandra) IsNew(subject string) bool {
